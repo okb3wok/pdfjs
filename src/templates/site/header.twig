@@ -1,0 +1,74 @@
+<nav class="fixed w-full z-[1000] top-0 left-0  dark:bg-gray-800 antialiased">
+  <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+    <div class="flex items-center justify-between">
+
+      <div class="flex items-center space-x-8">
+        <div class="shrink-0">
+          <a href="/" title="" class="text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500 text-2xl">
+            Личный кабинет
+          </a>
+        </div>
+
+        <ul class="hidden lg:flex items-center justify-start gap-6 md:gap-8 py-3 sm:justify-center">
+          <li>
+            <a href="/sign-new" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">
+              Подписать новый документ
+            </a>
+          </li>
+{#          <li class="shrink-0">#}
+{#            <a href="/documents#signed" title="" class="flex text-sm font-medium text-gray-900 hover:text-primary-700 dark:text-white dark:hover:text-primary-500">#}
+{#              Подписанные документы#}
+{#            </a>#}
+{#          </li>#}
+        </ul>
+      </div>
+
+      <div class="flex items-center lg:space-x-2">
+
+
+
+
+
+        <button id="userDropdownButton1" data-dropdown-toggle="userDropdown1" type="button" class="cursor-pointer inline-flex items-center rounded-lg justify-center p-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-sm font-medium leading-none text-gray-900 dark:text-white">
+          <svg class="w-5 h-5 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+          </svg>
+          {%  if isLoggedIn %}
+            {{ user.name }}
+          {% else %}
+            Аккаунт
+          {% endif %}
+          <svg class="w-4 h-4 text-gray-900 dark:text-white ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <div id="userDropdown1" class="hidden mt-4 w-56 divide-y divide-gray-100 overflow-hidden overflow-y-auto rounded-lg bg-white antialiased shadow dark:divide-gray-600 dark:bg-gray-700">
+
+
+
+          {%  if isLoggedIn %}
+            <ul class="p-2 text-start text-sm font-medium text-gray-900 dark:text-white">
+                <li><a href="/settings" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Настройки </a></li>
+            </ul>
+          {% endif %}
+
+          <div class="p-2 text-sm font-medium text-gray-900 dark:text-white">
+            {%  if isLoggedIn %}
+              <a href="/logout" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Выход </a>
+            {% else %}
+              <a href="/login" title="" class="inline-flex w-full items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-600"> Войти </a>
+            {% endif %}
+          </div>
+        </div>
+
+{#        <button type="button" data-collapse-toggle="navbar-menu" class="inline-flex lg:hidden items-center justify-center hover:bg-gray-100 rounded-md dark:hover:bg-gray-700 p-2 text-gray-900 dark:text-white">#}
+{#          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">#}
+{#            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>#}
+{#          </svg>#}
+{#        </button>#}
+      </div>
+    </div>
+
+  </div>
+</nav>

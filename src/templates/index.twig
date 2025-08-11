@@ -1,0 +1,63 @@
+{% extends "./base.twig" %}
+
+
+{% block content %}
+<section class="bg-gray-50 dark:bg-gray-900">
+
+    <div class="relative w-full max-w-screen-xl px-4 mx-auto 2xl:px-0 py-4">
+
+      <table id="search-table">
+        <thead>
+        <tr>
+          <th>
+                <span class="flex items-center">
+                    Документ
+                </span>
+          </th>
+          <th>
+                <span class="flex items-center">
+                    Статус
+                </span>
+          </th>
+          <th>
+                <span class="flex items-center">
+                    Дата подписания
+                </span>
+          </th>
+          <th>
+                <span class="flex items-center">
+                    IP
+                </span>
+          </th>
+
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for document in documents %}
+
+        <tr data-href="/document/{{ document.id }}">
+          <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">{{ document.name }}</td>
+          <td><div class="flex items-center">
+            {%  if document.signed %}
+              <div class="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div>Подписан
+            {% endif %}
+            </div>
+          </td>
+          <td>{{ document.createdAt | date('d.m.Y H:i:s') }}</td>
+          <td>{{ document.signature.ip }}</td>
+        </tr>
+
+        {% endfor %}
+
+
+        </tbody>
+      </table>
+
+
+    </div>
+
+</section>
+
+
+{% endblock %}

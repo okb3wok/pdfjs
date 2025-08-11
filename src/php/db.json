@@ -1,0 +1,38 @@
+{
+  "ra3wok@mail.ru": {
+    "name": "Александр Долженков",
+    "registered_at": "2019-01-01T00:00:00Z",
+    "last_login": "2025-08-08T12:00:00Z",
+    "public_key": "",
+    "password": "sdfsdf",
+    "documents": [
+      {
+        "id": "1dssfd-sdfsdf-sdfsd-sdfsdf",
+        "name": "Документ 1",
+        "path": "http://example.com/docs/1.pdf",
+        "hash": "abc123...",
+        "signed": true,
+        "signed_at": "2025-08-08T13:45:00Z",
+        "signature": {
+          "hash_signed": "sig-xyz...",
+          "ip": "192.168.1.1",
+          "user_agent": "Firefox/141.0"
+        }
+      },
+      {
+        "id": "dssfd-sdfsdf-sdfsd-sdfsdf",
+        "name": "Документ 2",
+        "path": "http://example.com/docs/2.pdf",
+        "hash": "abc1231...",
+        "signed": false,
+        "signed_at": "",
+        "signature": null
+      }
+
+    ],
+    "settings": {
+      "verification": "email",
+      "download-signed-documents": false
+    }
+  }
+}

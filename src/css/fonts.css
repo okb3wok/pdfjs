@@ -1,0 +1,28 @@
+/* roboto-300 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url('../static/fonts/roboto-v32-cyrillic_latin-300.woff2') format('woff2');
+}
+
+/* roboto-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../static/fonts/roboto-v32-cyrillic_latin-regular.woff2') format('woff2');
+}
+
+/* roboto-700 - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url('../static/fonts/roboto-v32-cyrillic_latin-700.woff2') format('woff2');
+
+}
+

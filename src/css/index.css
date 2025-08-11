@@ -1,0 +1,89 @@
+@import "simple-datatables/dist/style.css";
+@import "../../node_modules/tailwindcss";
+
+
+@custom-variant dark (&:where([theme=dark], [theme=dark] *));
+
+@theme {
+    --font-display: 'Roboto', system-ui, Tahoma, sans-serif;
+    --color-primary-50:  #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-200: #bfdbfe;
+    --color-primary-300: #93c5fd;
+    --color-primary-400: #60a5fa;
+    --color-primary-500: #3b82f6;
+    --color-primary-600: #2563eb;
+    --color-primary-700: #1d4ed8;
+    --color-primary-800: #1e40af;
+    --color-primary-900: #1e3a8a;
+    --color-primary-950: #172554;
+}
+
+
+@import "./fonts.css";
+
+html { font-family: var(--font-display);
+    @apply
+    selection:bg-indigo-700
+    selection:text-white
+    text-[#222222]
+    dark:text-[#eeeeee]
+    bg-white
+    dark:bg-gray-900;
+}
+
+
+.custom-clip-path {
+    clip-path: polygon(
+            74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%,
+            60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%,
+            17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%
+    );
+}
+
+
+ .datatable-selector{
+     display: none;
+ }
+
+main{
+    @apply  text-lg font-thin;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus {
+    outline: none;         /* убирает стандартную рамку браузера */
+}
+
+p{
+    @apply mb-6;
+}
+
+#toTop {
+    @apply transition-opacity w-[50px] h-[50px] fixed bottom-5 right-4 rounded-md flex justify-center
+    items-center text-black dark:text-white cursor-pointer backdrop-blur-sm bg-gray-400/10;
+}
+
+#toTop.hide {
+    @apply opacity-0 pointer-events-none;
+}
+
+#toTop.show {
+    @apply opacity-100;
+}
+
+#pdf-container > canvas {
+    @apply w-full;
+}
+
+#search-table>tbody>tr>td {
+    background-color: unset;
+}
+
+
+html[theme="dark"] #search-table>tbody>tr:hover {
+    background-color: #212742;
+    cursor: pointer;
+}

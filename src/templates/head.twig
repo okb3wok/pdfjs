@@ -1,0 +1,28 @@
+<head>
+  <meta charset="utf-8" />
+  <title>{% if pageTitle %}{{ pageTitle }}{% else %}Title{% endif %}</title>
+  <meta name="description" content="{% if pageDescription %}{{ pageDescription }}{% else %}{% endif %}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="theme-color" content="#000000">
+  <script>
+    let pdfjs = JSON.parse(localStorage.pdfjs || '{"theme": "dark"}');
+    const theme = pdfjs.theme;
+    if (theme)
+    {
+      document.documentElement.setAttribute('theme', theme);
+    }
+    if (navigator.userAgent.indexOf("Firefox") > -1) {
+      document.getElementsByName('viewport')[0].content="width=device-width, initial-scale=0.85, viewport-fit=cover";
+    }
+  </script>
+  <link rel="stylesheet" href="/static/styles.css" />
+
+{#  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">#}
+{#  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">#}
+{#  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">#}
+{#  <link rel="manifest" href="/static/favicon/site.webmanifest">#}
+{#  <link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg">#}
+{#  <link rel="shortcut icon" href="/favicon.ico">#}
+{#  <meta name="yandex-verification" content="1d488cf042340468" />#}
+</head>
